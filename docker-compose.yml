@@ -1,0 +1,37 @@
+version: "2.1"
+services:
+  server1:
+    build:
+      context: .
+    container_name: server1
+    hostname: server1
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    ports:
+      - "55555:22"
+    restart: unless-stopped
+
+  server2:
+    build:
+      context: .
+    container_name: server2
+    hostname: server2
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    ports:
+      - "55556:22"
+    restart: unless-stopped 
+
+  server3:
+    build:
+      context: .
+    container_name: server3
+    hostname: server3
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    ports:
+      - "55557:22"
+    restart: unless-stopped
